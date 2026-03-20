@@ -53,7 +53,7 @@ fn child(container_dir: &PathBuf, rootfs: &PathBuf, argv: &[CString]) -> Result<
 }
 fn main() -> Result<()> {
     dotenv().ok();
-    let rootfs = PathBuf::from(env::var("ROOT_FS")?);
+    let rootfs = PathBuf::from(env::var("ROOTFS")?);
     let container_dir = PathBuf::from(env::var("CONTAINER_DIR")?);
 
     print_proc_info("Before Isolation")?;
